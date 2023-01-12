@@ -78,7 +78,7 @@ echo_latest_version() {
     version="$(curl -fsSL https://api.github.com/repos/coder/code-server/releases | awk 'match($0,/.*"html_url": "(.*\/releases\/tag\/.*)".*/)' | head -n 1 | awk -F '"' '{print $4}')"
   else
     # https://gist.github.com/lukechilds/a83e1d7127b78fef38c2914c4ececc3c#gistcomment-2758860
-    version="$(curl -fsSLI -o /dev/null -w "%{url_effective}" https://ghproxy.com/https://github.com/coder/code-server/releases/latest)"
+    version="$(curl -fsSLI -o /dev/null -w "%{url_effective}" https://gh.api.99988866.xyz/https://github.com/coder/code-server/releases/latest)"
   fi
   version="${version#https://ghproxy.com/https://github.com/coder/code-server/releases/tag/}"
   version="${version#v}"
